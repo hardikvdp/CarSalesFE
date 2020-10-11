@@ -1,0 +1,55 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id" />
+    <div class="form-group">
+        <label>Model</label>
+        <input name="model" #model="ngModel" [(ngModel)]="service.formData.model" class="form-control" required />
+        <div class="validation-error" *ngIf="model.invalid && model.touched">This field is required.</div>
+    </div>
+    <div class="form-group">
+        <label>Make</label>
+        <input name="make" #make="ngModel" [(ngModel)]="service.formData.make" class="form-control" required />
+        <div class="validation-error" *ngIf="make.invalid && make.touched">This field is required.</div>
+    </div>
+    <div class="form-group">
+        <label>Doors</label>
+        <input type="number" name="doors" #doors="ngModel" [(ngModel)]="service.formData.doors" class="form-control" required />
+        <div class="validation-error" *ngIf="doors.invalid && doors.touched">This field is required.</div>
+    </div>
+    <div class="form-group">
+        <label>Wheels</label>
+        <input type="number" name="wheels" #wheels="ngModel" [(ngModel)]="service.formData.wheels" class="form-control" required />
+        <div class="validation-error" *ngIf="wheels.invalid && wheels.touched">This field is required.</div>
+    </div>
+    <div class="form-group">
+        <label>Vehicle Type</label>
+        <select name="vehicleType" #vehicleType="ngModel" [(ngModel)]="service.formData.vehicleType" class="custom-select">
+            <option value="" disabled>Choose vehicle type</option>
+            <option value="Car">Car</option>           
+         </select>
+    </div>
+    <div class="form-group">
+        <label>Body Type</label>
+        <select name="bodyType" #bodyType="ngModel" [(ngModel)]="service.formData.bodyType" class="custom-select">
+            <option value="" disabled>Choose body type</option>
+            <option value="SEDAN">SEDAN</option>
+            <option value="HATCHBACK">HATCHBACK</option>
+            <option value="UTE">UTE</option>
+         </select>
+    </div>  
+    <div class="form-group">
+        <label>Engine</label>
+        <input name="engine" #engine="ngModel" [(ngModel)]="service.formData.engine" class="form-control" required />
+        <div class="validation-error" *ngIf="engine.invalid && engine.touched">This field is required.</div>
+   
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input type="number" name="price" #price="ngModel" [(ngModel)]="service.formData.price" class="form-control" required />
+    </div>
+   
+
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class=".btn .btn-lg .btn-block">SUBMIT</button>
+    </div>
+    
+</form>

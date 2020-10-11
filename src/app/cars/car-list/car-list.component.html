@@ -1,0 +1,18 @@
+<table class="table table-hover">
+    <tr *ngIf="service.list.length > 0">
+        <th>Make</th>
+        <th>Model</th>
+        <th>Price</th>
+        <th>Vehicle Type</th>
+        <th>Body Type</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let Car of service.list">
+        <td (click)="popularForm(Car)">{{ Car.model }}</td>
+        <td (click)="popularForm(Car)">{{ Car.make }}</td>
+        <td (click)="popularForm(Car)">{{ Car.price | currency }}</td>
+        <td (click)="popularForm(Car)">{{ Car.vehicleType }}</td>
+        <td (click)="popularForm(Car)">{{ Car.bodyType }}</td>
+        <td><button class="btn btn-sm btn-outer-danger" (click)="deleteCar(Car.id)">X</button></td>
+    </tr>
+</table>
